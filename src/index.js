@@ -1,8 +1,10 @@
 import './style.css';
 import addAPIEventBtn from "./addAPIEventBtn";
+import toggleUnitsBtn from './toggleUnitsBtn';
 
 
-let city = "New York";
-let units = "&units=imperial";
 
-addAPIEventBtn(city, units);
+toggleUnitsBtn();
+addAPIEventBtn();
+
+

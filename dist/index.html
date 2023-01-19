@@ -18,19 +18,31 @@
           <img id="weatherIcon" src="http://openweathermap.org/img/w/02n.png" />
         </div>
         <div class="body-content">
-          <div class="temp">
-            <p class="weather-label">Temperature:</p>
+          <div class="temp info-box">
+            <p class="weather-label">Temperature</p>
             <p id="temperature">33°F</p>
           </div>
-          <div class="humdity">
-            <p class="weather-label">Humdity:</p>
+          <div class="humdity info-box">
+            <p class="weather-label">Humdity</p>
             <p id="humidity">22%</p>
           </div>
-          <div class="windspeed">
-            <p class="weather-label">Windspeed:</p>
+          <div class="windspeed info-box">
+            <p class="weather-label">Windspeed</p>
             <p id="windspeed">33mph</p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="search-bar">
+      <div class="search">
+        <label for="search">&#128270;</label>
+        <input placeholder="London" type="text" name="search" id="search" />
+        <button class="search-btn">Search</button>
+      </div>
+      <div class="toggle">
+        <button value="&units=imperial" class="toggle-btn">
+          Fahrenheit / Celsius
+        </button>
       </div>
     </div>
   </body>

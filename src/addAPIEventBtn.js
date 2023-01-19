@@ -1,18 +1,25 @@
 import getWeather from "./getWeatherData";
 import displayWeatherInfo from "./displayWeatherInfo";
 
-const addAPIEventBtn = (city, units) => {
-  let body = document.querySelector("body");
+const addAPIEventBtn = () => {
+  const searchButton = document.querySelector(`.search-btn`);
+  const toggleButton = document.querySelector(`.toggle-btn`);
 
-  const button = document.createElement(`button`);
-  button.innerText = "Call API";
+  searchButton.addEventListener("click", async () => {
+    let city = document.getElementById("search").value;
+    let units = toggleButton.value;
 
-  body.append(button);
+    if (city == "") {
+      return;
+    }
 
-  button.addEventListener("click", async () => {
     let weatherInfo = await getWeather(city, units);
-    displayWeatherInfo(weatherInfo);
-   
+
+    if (!weatherInfo) {
+      return;
+    }
+
+    displayWeatherInfo(weatherInfo, units);
   });
 };
 

@@ -1,5 +1,5 @@
 //Sets Data in the Card based off the API Response
-const displayWeatherInfo = (weatherInfo) => {
+const displayWeatherInfo = (weatherInfo, units) => {
   let location = document.getElementById("location");
   location.innerText = `${weatherInfo.city}, ${weatherInfo.country}`;
 
@@ -9,16 +9,22 @@ const displayWeatherInfo = (weatherInfo) => {
   let weatherIcon = document.getElementById("weatherIcon");
   weatherIcon.src = `http://openweathermap.org/img/w/${weatherInfo.icon}.png`;
 
-  let temperature = document.getElementById("temperature");
-  temperature.innerText = `${Math.round(weatherInfo.temperature)}°F`;
-
   let humidity = document.getElementById("humidity");
   humidity.innerText = `${weatherInfo.humidity}%`;
 
-  console.log(weatherInfo.wind);
+  if (units == "&units=imperial") {
+    let temperature = document.getElementById("temperature");
+    temperature.innerText = `${Math.round(weatherInfo.temperature)}°F`;
 
-   let windspeed = document.getElementById("windspeed");
-   windspeed.innerText = `${weatherInfo.wind}mph`;
+    let windspeed = document.getElementById("windspeed");
+    windspeed.innerText = `${weatherInfo.wind}mph`;
+  } else {
+    let temperature = document.getElementById("temperature");
+    temperature.innerText = `${Math.round(weatherInfo.temperature)}°C`;
+
+    let windspeed = document.getElementById("windspeed");
+    windspeed.innerText = `${weatherInfo.wind}km`;
+  }
 };
 
 export default displayWeatherInfo;

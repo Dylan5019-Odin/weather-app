@@ -29,14 +29,6 @@ const parseWeatherAPIResponse = async (response) => {
 
 export default parseWeatherAPIResponse;
 
-
-
-
-
-
-
-
-
 //Example Response From API
 // {
 //     "coord": {
